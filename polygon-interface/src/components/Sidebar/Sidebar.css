@@ -1,0 +1,38 @@
+.Sidebar {
+  width: 300px;
+}
+
+.on-trade .Sidebar {
+  display: none;
+}
+
+.Sidebar-link {
+  padding: 20px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.Sidebar-link > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  color: rgb(71, 85, 105);
+  font-weight: 500;
+}
+
+.Sidebar-link > a svg {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.Sidebar-link > a * {
+  stroke: rgb(71, 85, 105);
+  fill: rgb(71, 85, 105);
+}
+
+.Sidebar-link > a.active * {
+  color: white;
+  stroke: white;
+  fill: white;
+}

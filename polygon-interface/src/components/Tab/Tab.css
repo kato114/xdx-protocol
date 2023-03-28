@@ -1,0 +1,55 @@
+.Tab.block {
+  display: grid;
+  grid-auto-flow: column;
+  font-size: 1.4rem;
+  border-radius: 3px;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.7);
+  background: #1e293c;
+  box-shadow: inset 0px 0px 30px 5px rgba(255, 255, 255, 0.01);
+}
+
+.Tab-option-icon {
+  margin-right: 0.465rem;
+  opacity: 0.7;
+}
+
+.Tab.block .Tab-option {
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  margin: 5px;
+  padding: 6px 40px;
+}
+
+.Tab.block .Tab-option:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.Tab.block .Tab-option.active {
+  opacity: 1;
+  pointer-events: none;
+  background: #181e2b;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 3px;
+}
+
+.Tab.block .Tab-option.active .Tab-option-icon {
+  opacity: 1;
+}
+
+.Tab.inline .Tab-option {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-size: 14px;
+}
+
+.Tab.inline .Tab-option:hover {
+  opacity: 0.8;
+}
+
+.Tab.inline .Tab-option.active {
+  opacity: 1;
+  pointer-events: none;
+}

@@ -1,0 +1,51 @@
+.TabV2.block {
+  border-top: 1px solid #1e293c;
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 10px;
+}
+
+.TabV2.block .TabV2-option {
+  width: 33.3333%;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  background: #161c27;
+}
+
+.TabV2.block .TabV2-option:hover {
+  opacity: 0.8;
+}
+
+.TabV2.block .TabV2-option.active {
+  opacity: 1;
+  pointer-events: none;
+  border-top: 2px solid #00c8a4;
+  background: none;
+}
+
+.TabV2.inline {
+  border-bottom: 1px solid #1e293c;
+  margin-bottom: 10px;
+}
+
+.TabV2.inline .TabV2-option {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.TabV2.inline .TabV2-option:hover {
+  opacity: 0.8;
+}
+
+.TabV2.inline .TabV2-option.active {
+  opacity: 1;
+  pointer-events: none;
+  border-bottom: 2px solid #6366f1;
+}

@@ -1,0 +1,19 @@
+.BuyXDXXLX {
+  justify-content: space-between;
+}
+
+.BuyXDXXLX-container {
+  padding: 0 0 3.1rem 0;
+  width: 100%;
+}
+
+.BuyXDXXLX-container .section-title-content {
+  justify-content: flex-start;
+}
+
+@media (max-width: 400px) {
+  .BuyXDXXLX-container {
+    padding-left: 1.6rem !important;
+    padding-right: 1.6rem !important;
+  }
+}

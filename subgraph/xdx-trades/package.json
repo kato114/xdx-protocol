@@ -1,0 +1,15 @@
+{
+  "name": "xdx-trades",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --product hosted-service strongnezha/xdx-trades --deploy-key 5fceda0299a8932f967aecb734af8f61"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.21.1",
+    "@graphprotocol/graph-ts": "0.20.0",
+    "ethers": "^5.4.6",
+    "moment": "^2.29.1"
+  }
+}

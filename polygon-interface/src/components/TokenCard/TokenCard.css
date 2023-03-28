@@ -1,0 +1,9 @@
+
+.default-btn.read-more {
+  background: rgb(30 41 59);
+  border: none;
+}
+
+.default-btn.read-more:hover {
+  background: rgb(99 102 241);
+}

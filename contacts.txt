@@ -1,0 +1,135 @@
+npx hardhat run --network avalanche scripts/xdx/deployXDX.js 
+// XDX 0x27Ab3310791372526F86f32F6f240347F96C43B8
+
+npx hardhat run --network avalanche scripts/core/deployVault.js
+// Vault 0xb878f1fc91a40f06050f621E49B077088E142D1e
+// USDG 0x8614A398C0a7fF5063d4a7CB841c62Af42cF9f32
+// Router 0x064740A971Ba8a19225BC509853F4b32Ba2E3aED
+// VaultPriceFeed 0x8Ceb2A921dd39f0225a52205163DC48060435F1f
+// XLX 0xD4211A8E6Ef4302a521F4dD718f978fE31564E75
+// XLXManager 0x0e035768950D6A0c4dED2a531b7d9f4919B35D8E
+// VaultErrorController 0xAdC97E2Ad79692E3E8ef1f8895BE85986Dc39c29
+// VaultUtils 0x6E88eF1D884769c5fbff45600860Ed870C468285
+
+npx hardhat run --network avalanche scripts/peripherals/deployVaultReader.js
+// VaultReader 0xC7604C24822061122339366DB9B58f6Fbcf5E9c0
+
+npx hardhat run --network avalanche scripts/peripherals/deployReader.js
+// Reader 0xc4Bf99CD12fE13D7cb74FA47A87B7398c8512E64
+
+npx hardhat run --network avalanche scripts/peripherals/deployRewardReader.js
+// RewardReader 0x3B76fAe0AaCd890Be87F7162e8a45835928e2316
+
+npx hardhat run --network avalanche scripts/xdx/deployTokens.js
+// EsXDX 0xB175355B199A3bcaEa2cE6e2E6Bdc76ddaB03eDF
+// EsXDX_IOU 0x454D638b5FFCDcE40c724fDA9fF3e57e756D11D4
+
+========== change contract addresses ==========
+npx hardhat run --network avalanche scripts/staking/deployRewardRouterV2.js
+// Bonus_XDX_Token 0x2231E2Abe21816a258aD17602a68fAeE81dfFA51
+// Staked_XDX_RewardTracker 0xf9B17fF4dF3C8106680fB64B9558839190eebcBd
+// Staked_XDX_RewardDistributor 0xEB3E5EF00D1528D90BCA8bfCa8aa730E310788Ba
+// Staked_Bonus_XDX_RewardTracker 0x8A4AC0dd8EBd4F975c6a51a98509de54568c02ea
+// Bonus_XDX_Distributor 0x3B7fDb5025b3d4FD7E743271AF76a3CBAF61D850
+// Staked_Bonus_Fee_XDX_RewardTracker 0x4236e774B91a5f53b016177578409Df2bd47abe4
+// Staked_Bonus_Fee_XDX_RewardDistributor 0xF66ad33Bd71E5F94F6565c29BfcaA7900936bcaB
+// Fee_XLX_RewardTracker 0x6F71885C05F217142DBbBE9Ed48BC552b0e605CE
+// Fee_XLX_RewardDistributor 0xa15bC34b204cB41ff0b49cceb3F0aFe376450C24
+// Fee_Staked_XLX_RewardTracker 0xC5b0431a37A428C12447383A5470aC3C9731A557
+// Fee_Staked_XLX_RewardDistributor 0x346741b9A83D078fCcA3e65f0E9dd0897ce1c835
+// XDX_Vester 0x86508027A4c79540E35da5DbC55915FD246f7Cbb
+// XLX_Vester 0xd3aF336151B13C27CCC2B50fE310f7c9848c3dd7
+// RewardRouterV2 0x49766b048baa17Ba3FaD80C7821EFD3f02763143
+
+========== change contract addresses ==========
+npx hardhat run --network avalanche scripts/core/deployOrderBook.js
+// OrderBook 0xee15AEbCe71eE01e1822571dd87c2f43fa68B59f
+
+npx hardhat run --network avalanche scripts/peripherals/deployOrderBookReader.js
+// OrderBookReader 0x9eEa2DeB4dBbDc34409D6FBf46C7454688fAdd90
+
+npx hardhat run --network avalanche scripts/core/deployReferralStorage.js
+// ReferralStorage 0xE02633a1fa9a1922C92Acb41Ccf83BAB53037234
+========== call setTier of RefferralStorage ==========
+
+npx hardhat run --network avalanche scripts/core/deployReferralReader.js
+// ReferralReader 0x1d43E05AE5b8c33956c20855Ab8402AB09ff42Fe
+
+npx hardhat run --network avalanche scripts/core/deployShortsTracker.js
+// ShortsTracker 0x7bDC0792857E1db968b2afE8C6edfA066aFA62c1
+
+npx hardhat run --network avalanche scripts/access/deployTokenManager.js
+// TokenManager 0x5B27E3aa98B48382a379214AA7F909C72e33bBF2
+
+npx hardhat run --network avalanche scripts/core/deployPositionManager.js
+// PositionManager 0x649bFcbc67836E250be87A0D91cA5bc180E63447
+
+if ((await positionManager.gov()) != (await vault.gov())) {
+    await sendTxn(positionManager.setGov(await vault.gov()), "positionManager.setGov")
+}
+
+npx hardhat run --network avalanche scripts/core/deployPositionRouter.js
+// PositionRouter 0x022b7fCDE6344D2dfC298FAB72CF4BaCf9995b52
+
+// await sendTxn(timelock.setContractHandler(positionRouter.address, true), "timelock.setContractHandler(positionRouter)")
+// await sendTxn(positionRouter.setGov(await vault.gov()), "positionRouter.setGov")
+
+
+====== vault price feed set token config ======
+npx hardhat run --network avalanche scripts/config/setVaultPriceFeedConfig.js
+
+0	_token	address	0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7
+1	_priceFeed	address	0x0A77230d17318075983913bC2145DB16C7366156
+2	_priceDecimals	uint256	8
+3	_isStrictStable	bool	
+
+AVAX 0x5498BB86BC934c8D34FDA08E81D444153d0D06aD - 0x1D308089a2D1Ced3f1Ce36B1FcaF815b07217be3
+ETH 0x86d67c3D38D2bCeE722E601025C25a575021c6EA - 0x8226EC2c1926c9162b6F815153d10018A7ccdf07
+USDC 0x7898AcCC83587C3C55116c5230C17a6Cd9C71bad - 0xC492c8d82DC576Ad870707bb40EDb63E2026111E - 6
+
+====== Vault whitelist tokens =====
+npx hardhat run --network avalanche scripts/config/setVaultWhitelistConfig.js
+
+0	_token	address	0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7
+1	_tokenDecimals	uint256	18
+2	_tokenWeight	uint256	25000
+3	_minProfitBps	uint256	150
+4	_maxUsdgAmount	uint256	30000000
+5	_isStable	bool	
+6	_isShortable	bool	true
+
+
+npx hardhat run --network avalanche scripts/config/setTokensPerInterval.js
+npx hardhat run --network avalanche scripts/config/mintEsXDXToStakedXDXDistributor.js
+
+npx hardhat run --network avalanche .\scripts\peripherals\deployTimelock.js
+// Timelock 0x7ccc3f6dE2e54cB4BF39FFd6f04e4488F8b3ad47
+
+npx hardhat run --network avalanche scripts/peripherals/deployBatchSender.js
+// BatchSender 0xfCb0b31b552aa8c6edD1707CAD0d16DedE055850
+
+npx hardhat run --network avalanche scripts/peripherals/deployPriceFeedTimelock.js
+// PriceFeedTimelock 0xAF922141Bd3202Cf3bc9817cA0b64A7FC63396B3
+
+npx hardhat run --network avalanche scripts/oracle/deployFastPriceEvents.js
+// FastPriceEvents 0xbafEE6346120d082BFfCA9e7BAb57e33d27Aa9c8
+
+
+npx hardhat run --network avax scripts/core/deployPriceFeed.js
+
+PositionRouter should be vault timelock's contract handler
+PositionRouter should be referralStorage's contract handler.
+Reward distributers should have esMMS as rewardtoken
+
+
+src\pages\ClaimEsGmx\ClaimEsGmx.js has receiver addresses
+//complex contract verify
+npx hardhat verify --constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS
+npx hardhat verify --network avax --constructor-args verify/MLP.js 0x9d530DdC986bd20beC3E70dC5382dF2e0a1bE7a6
+npx hardhat verify --network avax --constructor-args verify/MintableBaseToken.js 0x6e29e6db1Ea778fCC17BA575C8fB22A4dfeAE08f
+npx hardhat verify --network avax --constructor-args verify/RewardTracker.js 0x8b498C45465f4a7e9CEc0D12Aa6a695A6b563A34
+npx hardhat verify --network avax --constructor-args verify/PositionManager.js 0xda18A5372fF256314fd3654FA074B4d949aBE823
+npx hardhat verify --network avax --constructor-args verify/PositionRouter.js 0xFe42F6CccD52542DFbB785dFa014Cb8ce70Bcf57
+npx hardhat verify --network avax 0xD3D403595ccBB99537Af13099aC89A102AAd70D1 "0x9e34FDE4Bf55061a1805C11654C21acCd34d511E" "0x6A154CE91003Cf4b8787280fd7C96D9BFb3f88C3" "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7" "0x2ff5dCfdB0C6b2a90480281c8dF77d0bc0884A49" "30" "20000000000000000"
+npx hardhat verify --network avax --constructor-args verify/PriceTimeLock.js 0x379aa69316Ab12A2ACD59134fF683eC068C0acFc
+npx hardhat verify --network avax --constructor-args verify/FastPriceFeed.js 0x68A644fFcC1BBEF5C8437c3FE3468424b959B684
